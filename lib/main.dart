@@ -13,28 +13,23 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.deepPurple[200],
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: ListView(
           children: [
-            //Container 1
-
-            Expanded(
-              child: Container(
-                color: Colors.deepPurple[600],
-              ),
+            //Container
+            Container(
+              color: Colors.deepPurple[500],
+              height: 350,
             ),
             //Container 2
-            Expanded(
-              child: Container(
-                color: Colors.deepPurple[300],
-              ),
+            Container(
+              color: Colors.deepPurple[400],
+              height: 350,
             ),
             //Container 3
-            Expanded(
-              child: Container(
-                color: Colors.deepPurple[100],
-              ),
-            )
+            Container(
+              color: Colors.deepPurple[300],
+              height: 350,
+            ),
           ],
         ),
         appBar: AppBar(
