@@ -13,17 +13,29 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.deepPurple[200],
-        body: Center(
-          child: Container(
-            height: 300,
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.deepPurple[600],
-              borderRadius: BorderRadius.circular(30),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            //Container 1
+
+            Expanded(
+              child: Container(
+                color: Colors.deepPurple[600],
+              ),
             ),
-            padding: EdgeInsets.all(25),
-            child: Icon(Icons.favorite, color: Colors.white, size: 100),
-          ),
+            //Container 2
+            Expanded(
+              child: Container(
+                color: Colors.deepPurple[300],
+              ),
+            ),
+            //Container 3
+            Expanded(
+              child: Container(
+                color: Colors.deepPurple[100],
+              ),
+            )
+          ],
         ),
         appBar: AppBar(
           title: Text(
