@@ -1,7 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:trial/pages/home_page.dart';
+import 'package:trial/pages/profile_page.dart';
+import 'package:trial/pages/settings_page.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
+
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  int _currentIndex = 0;
+
+  final List _pages = [
+    HomePage(),
+    SettingsPage(),
+    ProfilePage(),
+  ];
+
+  void _onIndexChanged(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,43 +41,27 @@ class FirstPage extends StatelessWidget {
         ),
         backgroundColor: Colors.deepPurple[500],
       ),
-      drawer: Drawer(
-        backgroundColor: Colors.deepPurple,
-        child: Column(
-          children: [
-            DrawerHeader(
-              child: Icon(Icons.favorite, size: 48),
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              title: Text(
-                'H O M E',
-                style: TextStyle(color: Colors.white),
-              ),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/home_page');
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.settings,
-                color: Colors.white,
-              ),
-              title: Text(
-                'S E T T I N G S',
-                style: TextStyle(color: Colors.white),
-              ),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/settings_page');
-              },
-            ),
-          ],
-        ),
+      body: _pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: _onIndexChanged,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.deepPurple[500],
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+            backgroundColor: Colors.deepPurple[500],
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
+            backgroundColor: Colors.deepPurple[500],
+          ),
+        ],
       ),
     );
   }

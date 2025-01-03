@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trial/pages/first_page.dart';
 import 'package:trial/pages/home_page.dart';
-import 'package:trial/pages/settings_page.dart';
+import 'package:trial/pages/settings_page.dart';  
 void main() {
   runApp(const MyApp());
 }
