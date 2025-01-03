@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trial/pages/second_page.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
@@ -8,15 +7,56 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First Page'),
-        backgroundColor: Colors.blue,
+        title: Center(
+          child: Text(
+            'LOGIN',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        backgroundColor: Colors.deepPurple[500],
       ),
-      body: Center(
-          child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/second_page');
+      drawer: Drawer(
+        backgroundColor: Colors.deepPurple,
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Icon(Icons.favorite, size: 48),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              title: Text(
+                'H O M E',
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/home_page');
               },
-              child: Text("Second Page"))),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              title: Text(
+                'S E T T I N G S',
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/settings_page');
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
