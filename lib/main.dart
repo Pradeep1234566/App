@@ -17,8 +17,12 @@ class MyApp extends StatelessWidget {
           child: Container(
             height: 300,
             width: 300,
-            color: Colors.blue[300],
-            child: Text("Hello World"),
+            decoration: BoxDecoration(
+              color: Colors.green[500],
+              borderRadius: BorderRadius.circular(30),
+            ),
+            padding: EdgeInsets.all(25),
+            child: Icon(Icons.favorite, color: Colors.red, size: 100),
           ),
         ),
       ),
