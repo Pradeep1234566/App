@@ -12,18 +12,32 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.blue[100],
+        backgroundColor: Colors.deepPurple[200],
         body: Center(
           child: Container(
             height: 300,
             width: 300,
             decoration: BoxDecoration(
-              color: Colors.green[500],
+              color: Colors.deepPurple[600],
               borderRadius: BorderRadius.circular(30),
             ),
             padding: EdgeInsets.all(25),
-            child: Icon(Icons.favorite, color: Colors.red, size: 100),
+            child: Icon(Icons.favorite, color: Colors.white, size: 100),
           ),
+        ),
+        appBar: AppBar(
+          title: Text(
+            'My First app',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          backgroundColor: Colors.deepPurple[600],
+          leading: Icon(Icons.menu, color: Colors.white),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.logout, color: Colors.white)),
+          ],
+          elevation: 0,
         ),
       ),
     );
